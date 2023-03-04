@@ -1,0 +1,54 @@
+Szocs Mihaela 321CBa
+
+isErrorMessage & getError se ocupa de
+erorile aparute in mesajele 
+introduse de la tastatura afisand corespunzator
+
+Am folosit scheletul de laborator, cu
+precadere functiile din helpers
+si din requests.
+Am avut totodata nevoie de parson de la linkul 
+din enunt.
+
+cookie si token sunt folosite in majoritatea functiilor
+comanda retine ce input adauga utilizatorul
+
+cat timp comanda nu e exit:
+
+
+register:
+deschid conexiunea
+creez usernameul si parola 
+le parsez, le prelucrez fac un post request 
+
+log-in :
+citesc username si parola le parsez catre server
+retin cookieul cu ajutorul unui buffer
+daca acesta e diferit de null utilizatorul este deja logat
+
+enter-library:
+facem un get request prin care se trimite si cookieul si
+se primeste un token care imi certifica mai tarziu faptul ca m am conectat
+
+get-books:
+trimitem get request cu cookie si token astfel incat sa
+primim lista cu cartile deja adaugate si detaliile
+aferente acestora
+
+get-book:
+citim id ul cartii
+lipim id ul de url ul standard si 
+cu ajutorul tokenului primim informatiile despre cartea 
+de la id-ul respectiv
+
+add-book:
+dupa ce primim toate informatiile despre carte
+(titlu,autor,gen,publisher si nr de pagini) le citim si 
+le parsam si facem post request cu tokenului
+
+delete-book 
+cream functia delete request si cu ajutorul id ului identificam cartea si 
+aplicam functia tot cu tokenul
+
+logout
+delogheaza utilizatorul 
